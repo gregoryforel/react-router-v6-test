@@ -1,16 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { data } from '../../../../data';
+import { data } from 'data';
+import { useRouteParams } from 'RouteParamsProvider'
 
 export function Ppm() {
-    const orgId = ''
-    const { id: ppmId } = useParams();
+    const { organization } = useRouteParams()
+    const ppmId = useParams().id
 
     const ppm = data.organizations
-        .find((org) => org.id === orgId)
+        .find((org) => org.id === organization)
         .ppms.find(({ id }) => id === ppmId);
 
+        console.log(ppm, data)
     const { title } = ppm;
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { NavLink, useRoutes } from 'react-router-dom'
 
 import { Header } from 'components/layout'
@@ -18,8 +18,8 @@ export const headerRoutes = [
         path: '/*',
         element: (
             <Header
-                breadcrumb={'breadcrumb'}
-                title={<h2>My</h2>}
+                breadcrumb={'Home'}
+                title={'My'}
                 nav={<Nav />}
             />
         )
@@ -38,7 +38,7 @@ function Nav() {
     return (
         <nav>
             <NavLink to="/" style={{ padding: '0' }}>
-                Dashboard
+                My Dashboard
             </NavLink>
             <NavLink to="/organizations" style={{ padding: 15 }}>
                 Organizations

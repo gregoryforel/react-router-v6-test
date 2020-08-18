@@ -1,8 +1,9 @@
-import React from 'react'
-import { NavLink, useRoutes } from 'react-router-dom'
+import * as React from 'react'
+import { NavLink, useParams, useRoutes } from 'react-router-dom'
 
 import { Header } from 'components/layout'
-import { Ppms } from 'modules/ppms/Ppms'
+import { data } from 'data'
+import { Ppms } from 'modules/ppms/routes'
 
 import { Organization } from './screens'
 
@@ -17,6 +18,13 @@ export const contentRoutes = [
     }
 ]
 
+const Title = () => {
+    const orgId = useParams().id
+    const title = data.organizations.find(org => org.id === orgId)?.title
+
+    return <React.Fragment>Org: {title}</React.Fragment>
+}
+
 export const headerRoutes = [
     {
         path: '/*',
@@ -27,8 +35,8 @@ export const headerRoutes = [
                         Home
                     </NavLink>
                 }
-                title={<h2>Organizations</h2>}
-                nav={<Nav />}
+                title={<Title />}
+                nav={<OrganizationNav />}
             />
         )
     },
@@ -41,8 +49,8 @@ export const headerRoutes = [
                         Home
                     </NavLink>
                 }
-                title={<h2>Organizations</h2>}
-                nav={<Nav />}
+                title={<Title />}
+                nav={<OrganizationNav />}
             />
         )
     }
@@ -56,14 +64,14 @@ export function OrganizationHeaderRouteElement() {
     return useRoutes(headerRoutes)
 }
 
-function Nav() {
+function OrganizationNav() {
     return (
         <nav>
-            <NavLink to="/" style={{ padding: '0' }}>
-                Home
+            <NavLink to="" style={{ padding: '0' }}>
+                Dashboard
             </NavLink>
-            <NavLink to="/organizations" style={{ padding: 15 }}>
-                Organizations
+            <NavLink to="ppms" style={{ padding: 15 }}>
+                Ppms
             </NavLink>
         </nav>
     )
