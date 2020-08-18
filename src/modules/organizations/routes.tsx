@@ -24,7 +24,7 @@ const contentRoutes = [
 
 const headerRoutes = [
     {
-        path: '/',
+        path: '/*',
         element: <Header />
     },
     {

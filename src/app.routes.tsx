@@ -26,10 +26,10 @@ export const headerRoutes = [
         path: '/*',
         element: <MyHeaderRouteElement />
     },
-    // {
-    //     path: 'organizations',
-    //     element: <MyHeaderRouteElement />,
-    // },
+    {
+        path: 'organizations',
+        element: <MyHeaderRouteElement />,
+    },
     {
         path: 'organizations/*',
         element: <OrganizationsHeaderRouteElement />,
