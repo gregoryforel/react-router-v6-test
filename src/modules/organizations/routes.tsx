@@ -14,32 +14,32 @@ const contentRoutes = [
     {
         path: ':id',
         element: <OrganizationContentRouteElement />,
-        children: [
-            {
-                path: 'ppms/*',
-            },
-        ],
+        // children: [
+        //     {
+        //         path: 'ppms/*',
+        //     },
+        // ],
     }
 ]
 
 const headerRoutes = [
-    // {
-    //     path: '/',
-    //     element: (
-    //         <Header
-    //             breadcrumb={
-    //                 <NavLink to="/" style={{ padding: '0' }}>
-    //                     Home
-    //                 </NavLink>
-    //             }
-    //             title={'FUCK'}
-    //             nav={<OrganizationsHeader />}
-    //         />
-    //     )
-    // },
+    {
+        path: '/*',
+        element: (
+            <Header
+                breadcrumb={
+                    <NavLink to="/" style={{ padding: '0' }}>
+                        Home
+                    </NavLink>
+                }
+                title={'FUCK'}
+                nav={<OrganizationsHeader />}
+            />
+        )
+    },
     {
         path: ':id',
-        element: <OrganizationHeaderRouteElement />
+        element: <OrganizationHeaderRouteElement />,
         // children: [
         //     {
         //         path: 'ppms/*',

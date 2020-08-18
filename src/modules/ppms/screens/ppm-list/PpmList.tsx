@@ -8,19 +8,16 @@ export function PpmList() {
     const { organization } = useRouteParams()
 
     return (
-        <div>
-            <h2>Ppm List</h2>
-            <ul>
-                {data.organizations
-                    .find(org => org.id === organization)
-                    .ppms.map(({ id, title }) => (
-                        <li key={id}>
-                            <Link to={`${id}`}>
-                                <h3>{title}</h3>
-                            </Link>
-                        </li>
-                    ))}
-            </ul>
-        </div>
+        <ul>
+            {data.organizations
+                .find(org => org.id === organization)
+                .ppms.map(({ id, title }) => (
+                    <li key={id}>
+                        <Link to={`${id}`}>
+                            <h4>{title}</h4>
+                        </Link>
+                    </li>
+                ))}
+        </ul>
     )
 }

@@ -6,15 +6,21 @@ export const data = {
             ppms: [
                 {
                     id: 'hardware',
-                    title: 'Hardware',
+                    title: 'Hardware'
                 },
-                { id: 'software', title: 'Software' },
-            ],
+                { id: 'software', title: 'Software' }
+            ]
         },
         {
             id: 'microsoft',
             title: 'Microsoft',
-            ppms: [],
-        },
-    ],
-};
+            ppms: [
+                {
+                    id: 'services',
+                    title: 'Services'
+                },
+                { id: 'windows', title: 'Windows' }
+            ]
+        }
+    ]
+}

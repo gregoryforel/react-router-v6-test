@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink, useParams, useRoutes } from 'react-router-dom'
+import { Link, useParams, useRoutes } from 'react-router-dom'
 
 import { Header } from 'components/layout'
 import { data } from 'data'
@@ -31,9 +31,9 @@ export const headerRoutes = [
         element: (
             <Header
                 breadcrumb={
-                    <NavLink to="/" style={{ padding: '0' }}>
+                    <Link to="/" style={{ padding: '0' }}>
                         Home
-                    </NavLink>
+                    </Link>
                 }
                 title={<Title />}
                 nav={<OrganizationNav />}
@@ -45,9 +45,9 @@ export const headerRoutes = [
         element: (
             <Header
                 breadcrumb={
-                    <NavLink to="/" style={{ padding: '0' }}>
+                    <Link to="/" style={{ padding: '0' }}>
                         Home
-                    </NavLink>
+                    </Link>
                 }
                 title={<Title />}
                 nav={<OrganizationNav />}
@@ -67,12 +67,12 @@ export function OrganizationHeaderRouteElement() {
 function OrganizationNav() {
     return (
         <nav>
-            <NavLink to="" style={{ padding: '0' }}>
+            <Link to="" style={{ padding: '0' }}>
                 Dashboard
-            </NavLink>
-            <NavLink to="ppms" style={{ padding: 15 }}>
+            </Link>
+            <Link to="ppms" style={{ padding: 15 }}>
                 Ppms
-            </NavLink>
+            </Link>
         </nav>
     )
 }
