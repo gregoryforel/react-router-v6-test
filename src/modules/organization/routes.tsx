@@ -8,7 +8,7 @@ import { Organization } from './screens'
 
 export const contentRoutes = [
     {
-        path: '',
+        path: '/',
         element: <Organization />
     },
     {
@@ -19,7 +19,7 @@ export const contentRoutes = [
 
 export const headerRoutes = [
     {
-        path: '*',
+        path: '/*',
         element: <Header />
     },
     {

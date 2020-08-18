@@ -2,19 +2,23 @@ import * as React from 'react'
 import { useRoutes } from 'react-router-dom'
 
 import { Header } from './components'
-import { Ppm } from './screens'
+import { Dashboard, Team } from './screens'
 
 export const contentRoutes = [
-    { path: '/', element: <Ppm /> },
+    { path: '/', element: <Dashboard /> },
     {
         path: 'dashboard',
-        element: <div>Dashboard</div>
+        element: <Dashboard />
+    },
+    {
+        path: 'team',
+        element: <Team />
     }
 ]
 
 export const headerRoutes = [
     {
-        path: '/',
+        path: '/*',
         element: <Header />
     },
     

@@ -25,8 +25,8 @@ function Nav() {
             <NavLink to="" style={{ padding: '0' }}>
                 Dashboard
             </NavLink>
-            <NavLink to="ppms" style={{ padding: 15 }}>
-                Ppms
+            <NavLink to="team" style={{ padding: 15 }}>
+                Team
             </NavLink>
         </nav>
     )

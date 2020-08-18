@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { data } from 'data'
 import { useRouteParams } from 'RouteParamsProvider'
 
-export function Ppm() {
+export function Dashboard() {
     const { organization } = useRouteParams()
     const ppmId = useParams().id
 
@@ -14,9 +14,5 @@ export function Ppm() {
 
     const { title } = ppm
 
-    return (
-        <React.Fragment>
-            <h3>PPM: {title}</h3>
-        </React.Fragment>
-    )
+    return <div>{title} Dashboard</div>
 }

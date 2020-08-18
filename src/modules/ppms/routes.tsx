@@ -1,7 +1,10 @@
 import * as React from 'react'
 import { useRoutes } from 'react-router-dom'
 
-import { PpmContentRouteElement, PpmHeaderRouteElement } from 'modules/ppm/routes'
+import {
+    PpmContentRouteElement,
+    PpmHeaderRouteElement
+} from 'modules/ppm/routes'
 
 import { Header } from './components'
 import { PpmList } from './screens'
@@ -22,11 +25,6 @@ export const headerRoutes = [
     {
         path: ':id/*',
         element: <PpmHeaderRouteElement />
-        // children: [
-        //     {
-        //         path: 'ppms/*',
-        //     },
-        // ],
     }
 ]
 
