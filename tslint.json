@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "array-type": [true, "array"],
+    "no-shadowed-variable": false,
+    "no-console": false,
+    "ordered-imports": true,
+    "jsdoc-format": false,
+    "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ]
+  },
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}

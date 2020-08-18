@@ -1,0 +1,28 @@
+.layout {
+    display: grid;
+    grid-template-areas: "sidebar header" "sidebar main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    grid-area: sidebar;    
+    background: #eee;
+    border-right: 1px solid white;
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    grid-area: header;
+    padding: 24px;
+    background: #eee;
+}
+
+.main {
+    display: flex;
+    grid-area: main;
+    padding: 24px;
+}
