@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useRoutes } from 'react-router-dom'
 
 import { Header } from './components'
-import { PpmsContentRouteElement } from 'modules/ppms/routes'
+import { PpmsContentRouteElement, PpmsHeaderRouteElement } from 'modules/ppms/routes'
 
 import { Organization } from './screens'
 
@@ -24,7 +24,7 @@ export const headerRoutes = [
     },
     {
         path: 'ppms/*',
-        element: <Header />
+        element: <PpmsHeaderRouteElement />
     }
 ]
 

@@ -3,13 +3,13 @@ import { useRoutes } from 'react-router-dom'
 
 
 import { Header } from './components'
-import { Ppm, PpmList } from './screens'
+import { Ppm } from './screens'
 
 export const contentRoutes = [
-    { path: '/', element: <PpmList /> },
+    { path: '/', element: <Ppm /> },
     {
-        path: ':id',
-        element: <Ppm />
+        path: 'dashboard',
+        element: <div>Dashboard</div>
     }
 ]
 
@@ -18,15 +18,7 @@ export const headerRoutes = [
         path: '/',
         element: <Header />
     },
-    {
-        path: ':id/*',
-        // element: <OrganizationHeaderRouteElement />
-        // children: [
-        //     {
-        //         path: 'ppms/*',
-        //     },
-        // ],
-    }
+    
 ]
 
 export const PpmsContentRouteElement = () => {

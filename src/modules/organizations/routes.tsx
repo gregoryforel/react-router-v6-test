@@ -13,7 +13,7 @@ import { OrganizationList } from './screens'
 const contentRoutes = [
     { path: '/*', element: <OrganizationList /> },
     {
-        path: ':id',
+        path: ':id/*',
         element: <OrganizationContentRouteElement />
         // children: [
         //     {
@@ -29,7 +29,7 @@ const headerRoutes = [
         element: <Header />
     },
     {
-        path: ':id',
+        path: ':id/*',
         element: <OrganizationHeaderRouteElement />
         // children: [
         //     {

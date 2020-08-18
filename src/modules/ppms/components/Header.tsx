@@ -1,1 +1,1 @@
-export { Header } from 'modules/my/components'
+export { Header } from 'modules/organization/components'
