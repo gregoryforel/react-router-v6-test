@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useRoutes } from 'react-router-dom'
 
-
 import { Header } from './components'
 import { Ppm } from './screens'
 
@@ -21,10 +20,10 @@ export const headerRoutes = [
     
 ]
 
-export const PpmsContentRouteElement = () => {
+export const PpmContentRouteElement = () => {
     return useRoutes(contentRoutes)
 }
 
-export const PpmsHeaderRouteElement = () => {
+export const PpmHeaderRouteElement = () => {
     return useRoutes(headerRoutes)
 }

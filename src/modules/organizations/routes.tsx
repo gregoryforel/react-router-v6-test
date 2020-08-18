@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { useRoutes } from 'react-router-dom'
 
-import { Header } from './components'
-
 import {
     OrganizationContentRouteElement,
     OrganizationHeaderRouteElement
 } from 'modules/organization/routes'
 
+import { Header } from './components'
 import { OrganizationList } from './screens'
 
 const contentRoutes = [
-    { path: '/*', element: <OrganizationList /> },
+    { path: '/', element: <OrganizationList /> },
     {
         path: ':id/*',
         element: <OrganizationContentRouteElement />
