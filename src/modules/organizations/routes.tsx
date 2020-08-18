@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { NavLink, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
-import { Header } from 'components/layout'
-import { MyContentRouteElement, MyHeaderRouteElement } from 'modules/my/routes'
+// import { Header as LayoutHeader  } from 'components/layout'
+import { Header } from 'modules/my/components'
+// import { MyContentRouteElement } from 'modules/my/routes'
 import {
     OrganizationContentRouteElement,
     OrganizationHeaderRouteElement
@@ -26,7 +27,7 @@ const contentRoutes = [
 const headerRoutes = [
     {
         path: '/',
-        element: <MyHeaderRouteElement />// <OrganizationsHeader />
+        element: <Header />// <OrganizationsHeader />
     },
     {
         path: ':id',
@@ -47,20 +48,20 @@ export function OrganizationsHeaderRouteElement() {
     return useRoutes(headerRoutes)
 }
 
-function OrganizationsHeader() {
-    return (
-        <Header          
-            title={'Organizations'}
-            nav={
-                <nav>
-                    <NavLink to="/" style={{ padding: '0' }}>
-                        Home
-                    </NavLink>
-                    <NavLink to="/organizations" style={{ padding: 15 }}>
-                        Organizations
-                    </NavLink>
-                </nav>
-            }
-        />
-    )
-}
+// function OrganizationsHeader() {
+//     return (
+//         <Header          
+//             title={'Organizations'}
+//             nav={
+//                 <nav>
+//                     <NavLink to="/" style={{ padding: '0' }}>
+//                         Home
+//                     </NavLink>
+//                     <NavLink to="/organizations" style={{ padding: 15 }}>
+//                         Organizations
+//                     </NavLink>
+//                 </nav>
+//             }
+//         />
+//     )
+// }

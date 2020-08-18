@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { NavLink, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
-import { Header } from 'components/layout'
+import { Header } from './components'
 
 import { Dashboard, Organizations } from './screens'
 
@@ -16,7 +16,7 @@ export const contentRoutes = [
 export const headerRoutes = [
     {
         path: '/*',
-        element: <Header title={'My'} nav={<Nav />} />
+        element: <Header />
     }
 ]
 
@@ -26,17 +26,4 @@ export const MyContentRouteElement = () => {
 
 export const MyHeaderRouteElement = () => {
     return useRoutes(headerRoutes)
-}
-
-function Nav() {
-    return (
-        <nav>
-            <NavLink to="/" style={{ padding: '0' }}>
-                My Dashboard
-            </NavLink>
-            <NavLink to="/organizations" style={{ padding: 15 }}>
-                Organizations
-            </NavLink>
-        </nav>
-    )
 }
