@@ -1,0 +1,1 @@
+export { Header } from 'modules/my/components'

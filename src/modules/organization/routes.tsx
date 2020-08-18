@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Link, useParams, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
-import { Header } from 'components/layout'
-import { data } from 'data'
-import { Ppms } from 'modules/ppms/routes'
+import { Header } from './components'
+import { PpmsContentRouteElement } from 'modules/ppms/routes'
 
 import { Organization } from './screens'
 
@@ -14,25 +13,18 @@ export const contentRoutes = [
     },
     {
         path: 'ppms/*',
-        element: <Ppms />
+        element: <PpmsContentRouteElement />
     }
 ]
-
-const Title = () => {
-    const orgId = useParams().id
-    const title = data.organizations.find(org => org.id === orgId)?.title
-
-    return <React.Fragment>Org: {title}</React.Fragment>
-}
 
 export const headerRoutes = [
     {
         path: '*',
-        element: <Header title={<Title />} nav={<OrganizationNav />} />
+        element: <Header />
     },
     {
         path: 'ppms/*',
-        element: <Header title={<Title />} nav={<OrganizationNav />} />
+        element: <Header />
     }
 ]
 
@@ -42,17 +34,4 @@ export function OrganizationContentRouteElement() {
 
 export function OrganizationHeaderRouteElement() {
     return useRoutes(headerRoutes)
-}
-
-function OrganizationNav() {
-    return (
-        <nav>
-            <Link to="" style={{ padding: '0' }}>
-                Dashboard
-            </Link>
-            <Link to="ppms" style={{ padding: 15 }}>
-                Ppms
-            </Link>
-        </nav>
-    )
 }
