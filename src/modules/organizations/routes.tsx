@@ -1,62 +1,70 @@
-import React from 'react';
-import { Link, useRoutes } from 'react-router-dom';
+import React from 'react'
+import { NavLink, useRoutes } from 'react-router-dom'
 
-import { Header } from '../../components/layout';
-import { OrganizationContentRouteElement, OrganizationHeaderRouteElement } from '../organization/routes';
-import { OrganizationList } from './screens';
+import { Header } from 'components/layout'
+import {
+    OrganizationContentRouteElement,
+    OrganizationHeaderRouteElement
+} from 'modules/organization/routes'
+
+import { OrganizationList } from './screens'
 
 const contentRoutes = [
-    { path: '/', element: <OrganizationList /> },
+    { path: '', element: <OrganizationList /> },
     {
         path: ':id',
-        element: <OrganizationContentRouteElement />,
+        element: <OrganizationContentRouteElement />
         // children: [
         //     {
         //         path: 'ppms/*',
         //     },
         // ],
-    },
-];
+    }
+]
 
 const headerRoutes = [
     {
         path: '/',
         element: (
             <Header
-                breadcrumb={<div>breadcrumb</div>}
+                breadcrumb={
+                    <NavLink to="/" style={{ padding: '0' }}>
+                        Home
+                    </NavLink>
+                }
                 title={<h2>Home</h2>}
                 nav={<Nav />}
             />
-        ),
+        )
     },
     {
         path: ':id',
-        element: <OrganizationHeaderRouteElement />,
+        element: <OrganizationHeaderRouteElement />
         // children: [
         //     {
         //         path: 'ppms/*',
         //     },
         // ],
-    },
-];
+    }
+]
 
 export function OrganizationsContentRouteElement() {
-    return useRoutes(contentRoutes);
+    return useRoutes(contentRoutes)
 }
 
 export function OrganizationsHeaderRouteElement() {
-    return useRoutes(headerRoutes);
+    return useRoutes(headerRoutes)
 }
 
 function Nav() {
     return (
         <nav>
-            <Link to='/' style={{ padding: '0' }}>
+            <NavLink to="/" style={{ padding: '0' }}>
                 Home
-            </Link>
-            <Link to='/organizations' style={{ padding: 15 }}>
+            </NavLink>
+            <NavLink to="/organizations" style={{ padding: 15 }}>
                 Organizations
-            </Link>
+            </NavLink>
         </nav>
-    );
+    )
 }
