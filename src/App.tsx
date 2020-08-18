@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRoutes } from 'react-router-dom'
+import { NavLink, useRoutes } from 'react-router-dom'
 
 import { RouteParamsProvider } from 'RouteParamsProvider'
 
@@ -13,7 +13,11 @@ export function App() {
     return (
         <RouteParamsProvider>
             <Layout
-                sidebar={<div>Sidebar</div>}
+                sidebar={
+                    <NavLink to="/" style={{ padding: '0' }}>
+                        Home
+                    </NavLink>
+                }
                 header={headerRouteElement}
                 main={<div className="content">{contentRouteElement}</div>}
             />

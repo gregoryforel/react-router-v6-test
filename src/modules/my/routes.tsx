@@ -16,13 +16,7 @@ export const contentRoutes = [
 export const headerRoutes = [
     {
         path: '/*',
-        element: (
-            <Header
-                breadcrumb={'Home'}
-                title={'My'}
-                nav={<Nav />}
-            />
-        )
+        element: <Header title={'My'} nav={<Nav />} />
     }
 ]
 

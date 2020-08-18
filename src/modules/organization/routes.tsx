@@ -9,7 +9,7 @@ import { Organization } from './screens'
 
 export const contentRoutes = [
     {
-        path: '/',
+        path: '',
         element: <Organization />
     },
     {
@@ -27,32 +27,12 @@ const Title = () => {
 
 export const headerRoutes = [
     {
-        path: '/*',
-        element: (
-            <Header
-                breadcrumb={
-                    <Link to="/" style={{ padding: '0' }}>
-                        Home
-                    </Link>
-                }
-                title={<Title />}
-                nav={<OrganizationNav />}
-            />
-        )
+        path: '*',
+        element: <Header title={<Title />} nav={<OrganizationNav />} />
     },
     {
         path: 'ppms/*',
-        element: (
-            <Header
-                breadcrumb={
-                    <Link to="/" style={{ padding: '0' }}>
-                        Home
-                    </Link>
-                }
-                title={<Title />}
-                nav={<OrganizationNav />}
-            />
-        )
+        element: <Header title={<Title />} nav={<OrganizationNav />} />
     }
 ]
 

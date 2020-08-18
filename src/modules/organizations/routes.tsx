@@ -2,6 +2,7 @@ import * as React from 'react'
 import { NavLink, useRoutes } from 'react-router-dom'
 
 import { Header } from 'components/layout'
+import { MyContentRouteElement, MyHeaderRouteElement } from 'modules/my/routes'
 import {
     OrganizationContentRouteElement,
     OrganizationHeaderRouteElement
@@ -10,7 +11,7 @@ import {
 import { OrganizationList } from './screens'
 
 const contentRoutes = [
-    { path: '', element: <OrganizationList /> },
+    { path: '/*', element: <OrganizationList /> },
     {
         path: ':id',
         element: <OrganizationContentRouteElement />,
@@ -24,18 +25,8 @@ const contentRoutes = [
 
 const headerRoutes = [
     {
-        path: '/*',
-        element: (
-            <Header
-                breadcrumb={
-                    <NavLink to="/" style={{ padding: '0' }}>
-                        Home
-                    </NavLink>
-                }
-                title={'FUCK'}
-                nav={<OrganizationsHeader />}
-            />
-        )
+        path: '/',
+        element: <MyHeaderRouteElement />// <OrganizationsHeader />
     },
     {
         path: ':id',
@@ -58,13 +49,8 @@ export function OrganizationsHeaderRouteElement() {
 
 function OrganizationsHeader() {
     return (
-        <Header
-            breadcrumb={
-                <NavLink to="/" style={{ padding: '0' }}>
-                    Home
-                </NavLink>
-            }
-            title={'Home'}
+        <Header          
+            title={'Organizations'}
             nav={
                 <nav>
                     <NavLink to="/" style={{ padding: '0' }}>
